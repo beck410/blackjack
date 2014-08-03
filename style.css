@@ -1,0 +1,12 @@
+#cards{
+  margin: 20px;
+}
+
+.card{
+  height: 50px;
+  width: 50px;
+  background: blue;
+  float: left;
+  margin-left: 10%;
+  margin-bottom: 5px;
+}
