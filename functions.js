@@ -4,10 +4,10 @@ showCards.onclick = function(){ displayCards() };
 //creates a deck of 52 cards - each card object has a suit,card and points 
 function newDeck(){
 
-  var ranks = [ {card:"A", lowPoint: 1, highPoint: 11 },
-               {card:"2", points:2} , {card:"3", points:3}, {card:"4", points:4}, {card:"5", points:5}, {card:"6", points: 6}, {card:"7", points: 7}, {card:"8", points:8}, {card:"9", points:9}, {card:"10", points:10}, {card:"J", points:10}, {card:"Q", points:10}, {card:"k", points:10} ];
+  var ranks = [ {card:"a", lowPoint: 1, highPoint: 11 },
+               {card:"2", points:2} , {card:"3", points:3}, {card:"4", points:4}, {card:"5", points:5}, {card:"6", points: 6}, {card:"7", points: 7}, {card:"8", points:8}, {card:"9", points:9}, {card:"10", points:10}, {card:"j", points:10}, {card:"q", points:10}, {card:"k", points:10} ];
   
-  var suits = [ "D", "C", "S", "H"];
+  var suits = [ "d", "c", "s", "h"];
   var numOfCards = ranks.length*suits.length;
   
   var deck = [];
@@ -36,11 +36,9 @@ function displayCards(){
     card.className = "card";
     var cardContainer = document.getElementById('container');
     cardContainer.parentNode.insertBefore(card, cardContainer.nextSibling);
-    
-    card.innerHTML = shuffledCards[i].suit + " " + shuffledCards[i].card;
-    
+    //URL NOT WORKING
+    card.style.backgroundImage = "url(card-img/" + shuffledCards[i].suit + "-" + shuffledCards[i].card + ".png" + ")";
   }
-    
 }
 
 //returns new shuffled card array
