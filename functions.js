@@ -1,6 +1,53 @@
-var showCards = document.getElementById("cards");
-showCards.onclick = function(){ displayCards() };
+var lowBet = document.getElementById("200");
+lowBet.onclick=function(){ showTable() };
 
+// Start Game
+function showTable(){
+  //show table/deck etc and remove start message
+  var gameSetUp = document.getElementById("game-setup");
+  var cardTable = document.getElementById("card-table");
+  var start = document.getElementById("start");
+  
+  gameSetUp.style.display="block";
+  cardTable.style.display="block";
+  start.style.display="none";
+  
+  //Deck of cards for game
+  var deck = newDeck();
+  
+  //adds dealer cards
+  initialCards(deck[0],deck[1]);
+  
+  //get these cards to check against player cards
+  
+  alert(deck[0].card);
+  
+  deck.splice(0, 2);
+  //removes dealer card
+  alert(deck[0].card);
+
+  
+}
+/* 
+//show dealer cards - pull first 2 cards from deck
+function initialCards(card1, card2){
+  var card1img = card1.suit + "-" + card1.card;
+  var card2img = card2.suit + "-" + card2.card;
+  var dealerParent1 = document.getElementById("dealer-card-1");
+  var dealerParent2 = document.getElementById("dealer-card-2");
+
+        
+  var dealer1Img = document.createElement('img');
+  var dealer2Img = document.createElement('img');
+  
+  dealer1Img.src = "card-img/" + card1img + ".png";
+  dealer2Img.src = "card-img/" + card2img + ".png";
+  
+  dealerParent1.appendChild(dealer1Img);
+  dealerParent2.appendChild(dealer2Img);
+  
+}
+*/
 //creates a deck of 52 cards - each card object has a suit,card and points 
 function newDeck(){
 
@@ -24,21 +71,9 @@ function newDeck(){
       }
     }
   }  
-  return deck;  
-}
-
-function displayCards(){
-  var deck = newDeck();
-  var shuffledCards = shuffleCards(deck);
   
-  for(var i=0; i < deck.length; i++){
-    var card = document.createElement('div');
-    card.className = "card";
-    var cardContainer = document.getElementById('container');
-    cardContainer.parentNode.insertBefore(card, cardContainer.nextSibling);
-    //URL NOT WORKING
-    card.style.backgroundImage = "url(card-img/" + shuffledCards[i].suit + "-" + shuffledCards[i].card + ".png" + ")";
-  }
+  return shuffleCards(deck);
+  
 }
 
 //returns new shuffled card array
@@ -51,6 +86,4 @@ function shuffleCards(numbers){
    }
    return(numbers);
 }
-
-
 

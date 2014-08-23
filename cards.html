@@ -17,51 +17,42 @@
 </head>
 
 <body>
-
-<section id="card-table">
-</section>
-
-<section id="dealer">
-<p>DEALER</p>
-</section>
-
-<section id="deck">
-  <img src="card-img/card-back/back-red-side.png" alt="deck of cards" />
-  <img src="card-img/card-back/back-red-side.png">  
-  <img src="card-img/card-back/back-red-side.png">
-  <img src="card-img/card-back/back-red-side.png">
-</section>
-
-<!-- Fix player cards --> 
-<section id="player-seats">
-  <div class="player" id="p1">
-    <div id="p1-cards">
-      <div id="p1-card-1"></div>
-      <div id="p1-card-2"></div>
+<div id="container">
+  <section id="start">
+    <div>
+      <h1>EBD BlackJack</h1>
+      <p><a href="#">Click Here For Rules</a></p>
+      <p> Or Jump Straight In And Let's Play</p>
+      <button id="200">$200 Buy In</button>
+      <button id="500">$500 Buy In</button>
+      <button id="1000">$1000 Buy In</button>
     </div>
-    <p>Player One<span>$100</span></p>
-  </div>
+  </section>
   
-  <div class="player" id="p2">
-    <div id="p2-cards">
-      <div id="p2-card-1"></div>
-      <div id="p2-card-2"></div>
+  <section id="card-table">
+    <div id="dealer">
+      <p>DEALER</p>
+      <div id="dealer-cards">
+        <img src="card-img/card-back/back-red-stand.png">
+        <!--set up to input image elements -->
+      </div>
     </div>
-    <p>Player Two<span>$100</span></p>
-  </div>
-  
-  <div class="player" id="p3">
-    <div id="p3-cards">
-      <div id="p3-card-1"></div>
-      <div id="p3-card-2"></div>
-    </div>
-    <p>Player Three<span>$100</span></p>
-  </div>
-</section>
-
-
-
-
-  <script src="functions.js"></script>
-</body>
-</html>
+    
+    <div id="deck">
+      <div id="deck">
+        <img src="card-img/card-back/back-red-side.png" alt="back of deck" id="deck-back-1" />
+        <img src="card-img/card-back/back-red-side.png" alt="back of deck" id="deck-back-2" />
+        <img src="card-img/card-back/back-red-side.png" alt="back of deck" id="deck-back-3" />
+        <img src="card-img/card-back/back-red-side.png" alt="back of deck" id="deck-back-4" />
+      </div>
+   </div> <!-- // #deck -->
+   
+   <div id="player">
+      <div id="player-cards">
+        <!-- set up to input img elements -->
+        
+      </div>
+     <p>Player One</p>
+   </div>
+   
+  </section> <!-- // #card-table -->
