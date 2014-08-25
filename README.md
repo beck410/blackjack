@@ -11,18 +11,17 @@ Functions
 
 // loaded onclick = $$ buy in
 startGame() {
-     - change display prop of card table (block)
-     - change display prop of start message (none)
+     - change display prop of card table (block) DONE
+     - change display prop of start message (none) DONE
      - 
-     - var deck = newDeck() // creates deck of 52 cards & shuffles
+     - var deck = newDeck() // creates deck of 52 cards & shuffles DONE
      
      while(player has money){
-        - newPlay(deck) {
-        
-        - initialCards(deck[0], deck[1], deck[2]) //function that displays one dealer card and 2 player cards 
+        - initialCards(deck[0], deck[1], deck[2], deck[3]) //function that displays one dealer card and 2 player cards DONE
     
-        - remove first 3 objects from deck 
+        - remove first 4 objects from deck DONE
      
+        //  NEXT!!!!
         - playersTurn(deck, dealersTurn(deck) )//function that displays player options - returns array of cards used from deck - callback function is dealer's options
      
         - var playerCards = playersTurn(deck) 
