@@ -12,15 +12,13 @@ startGame() {
     
         - remove first 4 objects from deck DONE
      
-        //  NEXT!!!!
-        - playersTurn(deck, dealersTurn(deck) )//function that displays player options - returns array of cards used from deck - callback function is dealer's options
-     
-        - var playerCards = playersTurn(deck) 
-        - var dealersCards = dealersTurn(deck) 
-        - remove length of playersCards and dealersCards from deck  
-    
-    
-        return length of deck
+        - create event listeners on player options
+          - hit = display first deck card in new <img> and push to playerPoints Array, remove first prop from deck, return playerPoints
+          - stand = hide player options, call dealer function
+        
+        - show player options
+        
+        - winner(playerPoints, dealerPoints) // tally up cards and see who wins 
     }    
         }
  
@@ -35,23 +33,7 @@ initialCards(playerCard-1, playerCard-2, dealerCard-1){
     - create <img> tag and add src for dealerCard-1
 }
 
-playersTurn(deck, callback) {
-    - change display prop for player options div 
-    - add if statements for doubledown, split, insurance
-    - call callback when certain criteria is met (over 21, player clicks stand)
-    - var playerHitCards = hit(deck, parentNode);
-    - return playerHitCards
-}
 
-dealersTurn(deck, dealer-card) {
-    - change second dealer card <img> to next deck card
-    - remove card from deck
-    - while (dealer is under 17 or 21){
-        switch statements (hit, stand, doubledown, split)
-    }
-    
-    - return dealer cards - hit(deck, parentNode) + 2 image cards 
-}
 
     
 //PLAYER OPTIONS

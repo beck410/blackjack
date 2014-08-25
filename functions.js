@@ -1,6 +1,7 @@
 var lowBet = document.getElementById("200");
 lowBet.onclick=function(){ startGame() };
 
+
 // Start Game
 function startGame(){
   //show table/deck etc and remove start message
@@ -17,6 +18,9 @@ function startGame(){
   //WORKING LOOP
   var x = 0;
   while(x < 1 ){
+  
+  //add event listeners to player options
+
     //empty array to collect cards to count
     var playerPoints = [];
     var dealerPoints = []; 
@@ -30,9 +34,32 @@ function startGame(){
     
     //removes 4 inital cards from deck 
     deck.splice(0,4);
+    
+    var hitOption = document.getElementById("hitOption");
+    var standOption = document.getElementById("standOption");
+    hitOption.addEventListener('click', function(){ hit(deck, playerPoints); }, false);
+    standOption.addEventListener('click', function(){ stand(deck, dealerPoints, playerOptions)}, false);
+    
+    //show player options
+    var playerOptions = document.getElementById("playerOptions");
+    playerOptions.style.display="block";
+    
+    
     //stops infinite loop - FOR DEVELOPMENT PURPOSES
     x += 1;
   }
+}
+
+function hit(deck , playerPoints){
+  //new <img> for card
+    playerPoints.push(deck[0]);
+    deck.splice(0,1);
+    return playerPoints;
+}
+
+function stand(deck, player, playerOptions){
+  playerOptions.style.display="none";
+  //turn show card into first prop in dealerPoints array 
 }
 
 function initialCards(playerCards, dealerCards){
@@ -66,7 +93,7 @@ function newDeck(){
                {card:"2", points:2} , {card:"3", points:3}, {card:"4", points:4}, {card:"5", points:5}, {card:"6", points: 6}, {card:"7", points: 7}, {card:"8", points:8}, {card:"9", points:9}, {card:"10", points:10}, {card:"j", points:10}, {card:"q", points:10}, {card:"k", points:10} ];
   
   var suits = [ "d", "c", "s", "h"];
-  var numOfCards = ranks.length*suits.length;
+  //var numOfCards = ranks.length*suits.length;
   
   var deck = [];
   
