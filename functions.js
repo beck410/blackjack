@@ -18,8 +18,6 @@ function startGame(){
   //WORKING LOOP
   var x = 0;
   while(x < 1 ){
-  
-  //add event listeners to player options
 
     //empty array to collect cards to count
     var playerPoints = [];
@@ -35,6 +33,7 @@ function startGame(){
     //removes 4 inital cards from deck 
     deck.splice(0,4);
     
+    //add event listeners to player options
     var hitOption = document.getElementById("hitOption");
     var standOption = document.getElementById("standOption");
     hitOption.addEventListener('click', function(){ hit(deck, playerPoints); }, false);
@@ -51,16 +50,69 @@ function startGame(){
 }
 
 function hit(deck , playerPoints){
-  //new <img> for card
-    playerPoints.push(deck[0]);
-    deck.splice(0,1);
-    return playerPoints;
+  //src from deck[0] for new image
+  var newCardsrc = deck[0].suit + '-' + deck[0].card;
+  
+  //parent node of cards
+  var playerParent = document.getElementById("playerCards");
+  
+  //create new <img> for player
+  var newCard = document.createElement("img");
+  
+  //add src to img
+  newCard.src = "card-img/" + newCardsrc + ".png";
+  
+  //add img below parent div
+  playerParent.appendChild(newCard);
+  
+  //add new card to playerPoints array, delete from deck and return playerPoints array
+  playerPoints.push(deck[0]);
+  deck.splice(0,1);
+  return playerPoints;
 }
 
-function stand(deck, player, playerOptions){
+function stand(deck, dealerCards, playerOptions){
   playerOptions.style.display="none";
   //turn show card into first prop in dealerPoints array 
-}
+  
+  //show dealer's 2nd initial card 
+  var dealerCardSrc = deck[1].suit + '-' + deck[1].card;
+  var secDealerCard = document.getElementById('secondCard');
+  secDealerCard.src = "card-img/" + dealerCardSrc + ".png";
+  
+  var dealerScore = 0;
+  
+  while(16 < dealerScore < 22 ){
+    var points; 
+    var cardLength = dealerCards.length;
+    for(var i=0; i < cardLength; i++){
+      
+    if(dealerCards[i].card === "a"){
+      if(dealerScore < 11) {
+        points = dealerCards[i].highPoint;
+      }
+      else{
+        points = dealerCards[i].lowPoint;
+      }
+    } //if
+    
+    else{
+      points = dealerCards[i].points;  
+    } //else
+    
+    dealerScore += points;
+   } //for
+  } //while
+  
+  if(dealerScore < 21) {
+    hit(deck, dealerCards);
+  }
+  
+  else{
+    alert("busted");
+  }
+ 
+} 
 
 function initialCards(playerCards, dealerCards){
   //card-img names
