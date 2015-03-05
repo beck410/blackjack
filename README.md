@@ -1,9 +1,8 @@
-Blackjack
-=========
+#Blackjack
 
-Blackjack Game made from Javascript
+##Synopsis
+Blackjack game made with Vanilla JavaScript.
 
- ------------------------
-|---UNDER CONSTRUCTION---|
- ------------------------
+[BlackJack Rules](http://www.pagat.com/banking/blackjack.html)
 
+##WIP
